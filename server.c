@@ -6,7 +6,7 @@
 /*   By: melperri <melperri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 11:04:48 by melperri          #+#    #+#             */
-/*   Updated: 2021/07/06 21:55:46 by melperri         ###   ########.fr       */
+/*   Updated: 2021/07/09 15:57:44 by melperri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,11 @@ static int	ft_strlen(char *str)
 
 static void	ft_realloc(void)
 {
-	free(g_str);
-	g_str = NULL;
+	if (g_str)
+	{
+		free(g_str);
+		g_str = NULL;
+	}
 	g_str = malloc(sizeof(char) * (g_len + 1));
 	if (g_str == NULL)
 	{
@@ -78,10 +81,16 @@ static void	handler(int signum)
 	{
 		write (1, &(*g_str), ft_strlen(g_str));
 		write(1, "\nMESSAGE BIEN RECU!!!\n", 22);
+		g_c = 0;
+		g_i = 0;
 		g_index = 0;
 		g_flag = 0;
-		free(g_str);
-		g_str = NULL;
+		g_len = 0;
+		if (g_str)
+		{
+			free(g_str);
+			g_str = NULL;
+		}
 	}
 }
 
