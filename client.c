@@ -6,7 +6,7 @@
 /*   By: melperri <melperri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 11:02:54 by melperri          #+#    #+#             */
-/*   Updated: 2021/07/06 22:00:53 by melperri         ###   ########.fr       */
+/*   Updated: 2021/07/09 16:22:58 by melperri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 static void	ft_send_signal(pid_t pid, int sig)
 {
 	kill(pid, sig);
-	usleep(21);
+	usleep(20);
 }
 
 static void	ft_pars_char(pid_t pid, char c)

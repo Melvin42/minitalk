@@ -6,7 +6,7 @@
 /*   By: melperri <melperri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 11:04:48 by melperri          #+#    #+#             */
-/*   Updated: 2021/07/09 15:57:44 by melperri         ###   ########.fr       */
+/*   Updated: 2021/07/30 16:25:24 by melperri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static void	handler(int signum)
 	}
 	if (signum == SIGUSR1 && g_flag == 1 && g_len > 0)
 	{
-		g_c |= 1 << g_i;
+		g_c |= 0 << g_i;
 		g_i++;
 	}
 	else if (signum == SIGUSR2 && g_flag == 1 && g_len > 0)
