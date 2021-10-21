@@ -6,7 +6,7 @@
 /*   By: melperri <melperri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 11:04:48 by melperri          #+#    #+#             */
-/*   Updated: 2021/10/21 15:44:17 by melperri         ###   ########.fr       */
+/*   Updated: 2021/10/21 18:06:06 by melperri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static void	ft_realloc(int len)
 		g_str = NULL;
 	}
 	g_str = malloc(sizeof(wchar_t) * (len + 1));
+	g_str[len] = '\0';
 	if (g_str == NULL)
 	{
 		free(g_str);

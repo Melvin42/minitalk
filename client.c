@@ -6,17 +6,11 @@
 /*   By: melperri <melperri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 11:02:54 by melperri          #+#    #+#             */
-/*   Updated: 2021/10/21 15:43:43 by melperri         ###   ########.fr       */
+/*   Updated: 2021/10/21 18:03:43 by melperri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <signal.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <stdio.h>
+#include "client.h"
 
 static void	ft_send_signal(pid_t pid, int sig)
 {
@@ -47,7 +41,7 @@ int	main(int ac, char **av)
 
 	if (ac != 3)
 		exit(1);
-	server = atoi(av[1]);
+	server = ft_atoi(av[1]);
 	client = getpid();
 	i = -1;
 	while (av[2][++i])
